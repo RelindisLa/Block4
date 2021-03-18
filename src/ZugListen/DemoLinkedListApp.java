@@ -26,6 +26,9 @@ public class DemoLinkedListApp {
         linkedList.add(5);
         linkedList.add(25);
         linkedList.add(275);
+        linkedList.add(2);
+        linkedList.add(27);
+        linkedList.add(15);
 
         linkedList.printAllNodes();
 

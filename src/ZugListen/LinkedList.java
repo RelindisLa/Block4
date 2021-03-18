@@ -10,19 +10,18 @@ public class LinkedList {
         Node neueWaggon = new Node();
         neueWaggon.value = value;
 
-        if (first == null){
+        if (first == null) {
             first = neueWaggon;
             last = neueWaggon;
-        }
-        else {
+        } else {
             last.next = neueWaggon; //Waggon hinten anhängen
             last = neueWaggon;
         }
     }
 
-    public void printAllNodes () {
+    public void printAllNodes() {
         Node current = first;
-        while (current != null){
+        while (current != null) {
             System.out.print(current.value + " -> ");
             current = current.next;
         }
