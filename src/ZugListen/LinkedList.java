@@ -10,9 +10,22 @@ public class LinkedList {
         Node neueWaggon = new Node();
         neueWaggon.value = value;
 
-        last.next = neueWaggon; //Waggon hinten anhängen
-        last = neueWaggon;
+        if (first == null){
+            first = neueWaggon;
+            last = neueWaggon;
+        }
+        else {
+            last.next = neueWaggon; //Waggon hinten anhängen
+            last = neueWaggon;
+        }
     }
 
+    public void printAllNodes () {
+        Node current = first;
+        while (current != null){
+            System.out.print(current.value + " -> ");
+            current = current.next;
+        }
+    }
 
 }

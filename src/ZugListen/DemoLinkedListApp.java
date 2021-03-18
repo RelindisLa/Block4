@@ -21,6 +21,14 @@ public class DemoLinkedListApp {
 
         //System.out.println("wagon2.next.value = " + wagon2.next.value);
 
+        LinkedList linkedList = new LinkedList();
+
+        linkedList.add(5);
+        linkedList.add(25);
+        linkedList.add(275);
+
+        linkedList.printAllNodes();
+
 
     }
 }
