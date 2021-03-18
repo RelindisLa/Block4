@@ -24,14 +24,37 @@ public class DemoLinkedListApp {
         LinkedList linkedList = new LinkedList();
 
         linkedList.add(5);
-        linkedList.add(25);
-        linkedList.add(275);
-        linkedList.add(2);
-        linkedList.add(27);
+        linkedList.add(10);
         linkedList.add(15);
+        linkedList.add(20);
+        linkedList.add(25);
+        linkedList.add(30);
 
         linkedList.printAllNodes();
+        System.out.println();
+        System.out.println("Yes, is on Waggon Nr: " + linkedList.containsValue(2));
+        System.out.println(linkedList.containsValue(287));
 
+        //Node an Position ausgeben
+        System.out.println(linkedList.getAt(3).value);
+        System.out.println(linkedList.getAt(5).value);
+        System.out.println(linkedList.getAt(3));
+
+        System.out.println();
+        linkedList.printAllNodes();
+        System.out.println();
+        linkedList.deleteAt(3);
+        linkedList.printAllNodes();
+        System.out.println();
+        linkedList.deleteAt(1);
+        linkedList.printAllNodes();
+        System.out.println();
+        linkedList.deleteAt(4);
+        linkedList.printAllNodes();
+        System.out.println();
+        System.out.println(linkedList.getAt(3).value);
+        linkedList.add(5);
+        linkedList.printAllNodes();
 
     }
 }
