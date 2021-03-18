@@ -55,6 +55,18 @@ public class DemoLinkedListApp {
         System.out.println(linkedList.getAt(3).value);
         linkedList.add(5);
         linkedList.printAllNodes();
+        System.out.println();
+        linkedList.addElement(2,5);
+        linkedList.addElement(1,5);
+        linkedList.addElement(6,30);
+        linkedList.add(40);
+        linkedList.printAllNodes();
+        System.out.println();
+
+        linkedList.changeValue(3,15);
+        linkedList.changeValue(7,35);
+        linkedList.printAllNodes();
+        System.out.println();
 
     }
 }

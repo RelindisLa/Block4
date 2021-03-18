@@ -66,8 +66,7 @@ public class LinkedList {
         if (position == 0) {
             first = first.next;
             current.next = null;
-        }
-        else{
+        } else {
             while (current != null) {
                 if (position == index) {
                     //current.next = current.next.next;
@@ -75,7 +74,7 @@ public class LinkedList {
                     current.next = deleteNode.next;
 
                     deleteNode.next = null;
-                    if (deleteNode == last) {
+                    if (last == deleteNode) {
                         last = current;
                     }
                     break;
@@ -88,6 +87,51 @@ public class LinkedList {
     }
 
     //einfügen an bestimmter Stelle
+    public void addElement(int position, int value) {
+        Node newWaggon = new Node();
+        newWaggon.value = value;
+
+        Node current = first;
+        int index = 1;
+        position = position - 1;
+
+        if (first == null) {
+            first = newWaggon;
+            last = newWaggon;
+        } else {
+            if (position == 0) {
+                first = newWaggon;
+                newWaggon.next = current;
+            } else {
+                while (current != null) {
+                    if (position == index) {
+                        Node next = current.next;
+                        current.next = newWaggon;
+                        newWaggon.next = next;
+                        if (current == last){
+                            last = newWaggon;
+                        }
+                        break;
+                    }
+                    current = current.next;
+                    index++;
+                }
+            }
+        }
+    }
     //changeValue
+    public void changeValue(int position, int newValue) {
+        Node current = first;
+        int index = 1;
+        while (current != null) {
+            if (position == index) {
+                current.value = newValue;
+                break;
+            }
+            current = current.next;
+            index++;
+        }
+    }
+
 
 }
