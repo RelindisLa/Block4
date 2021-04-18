@@ -2,47 +2,44 @@ package Übung13;
 
 public class Rezept {
 
-    int anzahlPersonen = 0;
-    String [] zutatenName;
-    int [] gewichtZutat = new int[0];
-    double [] preis = new double[0];
-    double [][] zutaten = new double [zutatenName.length][1];
+    public int anzahlPersonen;
+    public String [] zutatenName;
+    public double [][] zutaten;
 
     public boolean allergisch(String zutatAllergie){
-        if (zutatAllergie.equals(zutatenName))
-            return true;
-        else return false;
+        for (int i = 0; i < zutatenName.length; i++) {
+            if (zutatAllergie.equals(zutatenName))
+                return true;
+        }
+        return false;
     }
 
-    public boolean laktoseFrei(){
-        if (zutatenName.equals("Milch")){
-            zutatenName = null;
-            return true;
+    public boolean laktoseFrei() {
+        boolean hatLaktose = false;
+
+        for (int i = 0; i < zutatenName.length; i++) {
+            if (zutatenName[i].equals("Milch") || zutatenName[i].equals("käse")) {
+                hatLaktose = true;
+                zutaten[i][0] = 0;
+                zutaten[i][1] = 0.0;
+            }
         }
-        else if (zutatenName.equals("Käse")) {
-            zutatenName = null;
-            return true;
-        }
-        else return false;
+        return hatLaktose;
     }
 
     public double kostet(){
         double kosten = 0;
-        for (int i = 0; i < zutatenName.length ; i++) {
+        for (int i = 0; i < zutaten.length ; i++) {
             kosten = kosten + zutaten[i][1];
         }
         return kosten;
     }
 
-    public double kostetProPerson(){
-        double kostetProPersion = kostet() / anzahlPersonen;
-        return kostetProPersion;
-    }
+    public double kostetProPerson() {
+            return kostet() / anzahlPersonen;
+        }
 
     public void aenderePersonenanzahl (int anzahl){
-        //double gesamtKosten = 0;
-        //gesamtKosten = kostetProPerson() * anzahl;
-        //return gesamtKosten;
         for (int i = 0; i < zutatenName.length; i++) {
             int menge = 0;
             zutaten[i][0] = menge;
